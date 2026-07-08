@@ -1,0 +1,40 @@
+# Lokalna konfiguracija
+.env
+.env.*
+!.env.example
+
+# Editor i OS datoteke
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logovi, cache i privremene datoteke
+*.log
+*.tmp
+*.temp
+tmp/
+temp/
+cache/
+storage/logs/
+storage/cache/
+
+# Dependency direktoriji
+vendor/
+node_modules/
+
+# Test i coverage artefakti
+coverage/
+.phpunit.cache/
+.phpunit.result.cache
+
+# Build artefakti
+dist/
+build/
+public/build/
+
+# Runtime datoteke
+*.pid

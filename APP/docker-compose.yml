@@ -1,0 +1,83 @@
+name: vet-ambulanta
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vet_app
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    environment:
+      APP_ENV: local
+      APP_NAME: Veterinarska ambulanta
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: vet_ambulanta
+      DB_USERNAME: vet_user
+      DB_PASSWORD: vet_password
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    profiles:
+      - test
+    environment:
+      APP_ENV: test
+      APP_NAME: Veterinarska ambulanta
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: vet_ambulanta
+      DB_USERNAME: vet_user
+      DB_PASSWORD: vet_password
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+    command: ["php", "tests/run.php"]
+
+  db:
+    image: mysql:8.4
+    container_name: vet_db
+    restart: unless-stopped
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_DATABASE: vet_ambulanta
+      MYSQL_USER: vet_user
+      MYSQL_PASSWORD: vet_password
+      MYSQL_ROOT_PASSWORD: root_password
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot_password"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  phpmyadmin:
+    image: phpmyadmin:5
+    container_name: vet_phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: root_password
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  db_data:
