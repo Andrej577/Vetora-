@@ -1,0 +1,33 @@
+# Lokalna okolina
+.env
+.env.*
+!.env.example
+
+# Editor i OS datoteke
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logovi i privremene datoteke
+*.log
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Dependency i build direktoriji
+node_modules/
+vendor/
+dist/
+build/
+coverage/
+
+# Docker i runtime lokalni podaci
+*.pid
+*.seed
+
+.agents/

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vetora | Operativni sustav za veterinarske ambulante</title>
+  <meta name="description" content="Vetora je web aplikacija za organizaciju veterinarske ambulante: vlasnici, ljubimci, termini, liječnici, dnevnik rada i API.">
+  <meta name="theme-color" content="#0b0f14">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Glavna navigacija">
+      <a class="brand" href="#home">
+        <span class="brand-mark"><img src="assets/vetora-logo.svg" alt=""></span>
+        <span>Vetora</span>
+      </a>
+      <div class="nav-links">
+        <a href="#platforma">Platforma</a>
+        <a href="#moduli">Moduli</a>
+        <a href="#tok">Tok rada</a>
+        <a href="#kontakt">Demo</a>
+      </div>
+      <a class="nav-action" href="#kontakt">Zatraži demo</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Vetora / ambulanta workspace</p>
+        <h1>Jedan ekran za ritam cijele veterinarske ambulante.</h1>
+        <p>
+          Vetora povezuje dnevnik rada, vlasnike, ljubimce, termine i liječnike u sučelje koje izgleda
+          kao alat za ozbiljan operativni rad, a ne kao još jedna tablica.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#kontakt">Pokreni demo</a>
+          <a class="button secondary" href="#platforma">Pregled platforme</a>
+        </div>
+      </div>
+
+      <aside class="hero-console" aria-label="Vetora produkt prikaz">
+        <div class="console-top">
+          <span>Vetora.app</span>
+          <div><i></i><i></i><i></i></div>
+        </div>
+        <div class="console-body">
+          <nav class="console-sidebar">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </nav>
+          <section class="console-main">
+            <div class="console-hero">
+              <div>
+                <small>Danas</small>
+                <strong>Dnevnik rada</strong>
+              </div>
+              <img src="assets/vetora-hero.png" alt="">
+            </div>
+            <div class="console-grid">
+              <article><span>Vlasnici</span><strong>248</strong></article>
+              <article><span>Ljubimci</span><strong>391</strong></article>
+              <article><span>Termini</span><strong>42</strong></article>
+            </div>
+            <div class="console-table">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </section>
+        </div>
+      </aside>
+    </section>
+
+    <section class="signal-bar" aria-label="Ključne prednosti">
+      <article><span>01</span><strong>Dnevnik rada</strong><small>centralni pregled dana</small></article>
+      <article><span>02</span><strong>Pacijenti</strong><small>vlasnici i ljubimci povezani</small></article>
+      <article><span>03</span><strong>API ready</strong><small>spremno za integracije</small></article>
+    </section>
+
+    <section class="section platform" id="platforma">
+      <div class="section-code">
+        <span>platform.core</span>
+        <strong>Designed for busy clinics</strong>
+      </div>
+      <div>
+        <p class="eyebrow">Platforma</p>
+        <h2>Ambulanta kao workspace, ne kao papirnati proces.</h2>
+        <p>
+          Vetora je zamišljena kao operativni sloj za veterinarski tim: brzo dodavanje podataka,
+          pregledna navigacija, jasni statusi i modularna struktura za širenje sustava.
+        </p>
+      </div>
+    </section>
+
+    <section class="module-board" id="moduli">
+      <article class="module-card large">
+        <span>owners.new()</span>
+        <h3>Vlasnici</h3>
+        <p>Kontakt, email, adresa i veza s ljubimcima bez lutanja kroz dokumente.</p>
+      </article>
+      <article class="module-card">
+        <span>pets.profile</span>
+        <h3>Ljubimci</h3>
+        <p>Vrsta, pasmina, datum rođenja, mikročip i napomene.</p>
+      </article>
+      <article class="module-card accent">
+        <span>schedule.today</span>
+        <h3>Termini</h3>
+        <p>Dnevni raspored, razlog dolaska i status posjeta.</p>
+      </article>
+      <article class="module-card">
+        <span>team.doctors</span>
+        <h3>Liječnici</h3>
+        <p>Profili tima, specijalizacije i vizualna identifikacija.</p>
+      </article>
+      <article class="module-card wide">
+        <span>next.modules</span>
+        <h3>Zalihe, izvještaji, računi i kartoni</h3>
+        <p>Landing prikazuje MVP, ali struktura aplikacije je spremna za ozbiljnije poslovne module.</p>
+      </article>
+    </section>
+
+    <section class="workflow" id="tok">
+      <div>
+        <p class="eyebrow">Tok rada</p>
+        <h2>Od ulaska pacijenta do zakazanog termina u četiri poteza.</h2>
+      </div>
+      <div class="steps">
+        <article><span>⌘1</span><strong>Dodaj vlasnika</strong><p>Unesi osnovne kontakt podatke i pripremi profil.</p></article>
+        <article><span>⌘2</span><strong>Poveži ljubimca</strong><p>Dodaj vrstu, pasminu, mikročip i napomene.</p></article>
+        <article><span>⌘3</span><strong>Zakazuj termin</strong><p>Odredi vrijeme, razlog dolaska i status.</p></article>
+        <article><span>⌘4</span><strong>Prati dnevnik</strong><p>Tim vidi današnji operativni ritam na početnoj ploči.</p></article>
+      </div>
+    </section>
+
+    <section class="animal-strip">
+      <div><img src="assets/pet-dog.png" alt=""><span>Pas</span></div>
+      <div><img src="assets/pet-cat.png" alt=""><span>Mačka</span></div>
+      <div><strong>+</strong><span>Egzotične životinje, ptice, gmazovi i mali sisavci</span></div>
+    </section>
+
+    <section class="contact" id="kontakt">
+      <div class="contact-copy">
+        <p class="eyebrow">Demo request</p>
+        <h2>Želiš prezentirati Vetoru kao ozbiljan proizvod?</h2>
+        <p>Ovaj landing page je statički, Docker-ready i spreman za daljnje povezivanje s pravom kontakt formom.</p>
+      </div>
+      <form class="contact-form">
+        <label>Ime i prezime<input type="text" placeholder="Vaše ime"></label>
+        <label>Email<input type="email" placeholder="ime@email.com"></label>
+        <label>Poruka<textarea rows="5" placeholder="Zanima me Vetora demo..."></textarea></label>
+        <button type="button">Pošalji upit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Vetora / veterinary operations workspace</span>
+    <a href="#home">Natrag na vrh</a>
+  </footer>
+</body>
+</html>
